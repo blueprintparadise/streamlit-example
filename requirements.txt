@@ -1,3 +1,7 @@
 altair
 pandas
 streamlit
+farm-haystack
+validators
+markdown
+st-annotated-text
