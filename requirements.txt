@@ -1,7 +1,7 @@
 altair
 pandas
 streamlit
-farm-haystack
+farm-haystack[faiss]
 validators
 markdown
 st-annotated-text
