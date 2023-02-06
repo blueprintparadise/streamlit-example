@@ -28,7 +28,7 @@ def load_dataset():
 @st.cache(hash_funcs={"builtins.SwigPyObject": lambda _: None},allow_output_mutation=True)
 def start_haystack():
 
-    document_store = FAISSDocumentStore(sql_url = "sqlite:///faiss_document_store_2.db")
+    document_store = FAISSDocumentStore(sql_url = "sqlite:///faiss_document_store_4.db")
     df_dict = load_dataset()
     load_and_write_data(df_dict,document_store)
     #
