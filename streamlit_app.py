@@ -28,12 +28,12 @@ def load_dataset():
 @st.cache(hash_funcs={"builtins.SwigPyObject": lambda _: None},allow_output_mutation=True)
 def start_haystack():
 
-    document_store = FAISSDocumentStore(sql_url = "sqlite:///faiss_document_store_4.db")
+    document_store = FAISSDocumentStore(sql_url = "sqlite:///faiss_document_store_5.db")
     df_dict = load_dataset()
     load_and_write_data(df_dict,document_store)
     #
     #  multi-qa-mpnet-base-dot-v1
-    retriever = EmbeddingRetriever(embedding_model='distilroberta-base-msmarco-v2',document_store = document_store,model_format='sentence_transformers')
+    retriever = EmbeddingRetriever(embedding_model='sentence-transformers/all-mpnet-base-v2',document_store = document_store,model_format='sentence_transformers')
     document_store.update_embeddings(retriever=retriever)
 
     #reader = FARMReader(model_name_or_path="deepset/roberta-base-squad2-distilled", use_gpu=True)
